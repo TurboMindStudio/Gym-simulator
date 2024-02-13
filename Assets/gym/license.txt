@@ -1,0 +1,11 @@
+Model Information:
+* title:	Avenue Tennis - Main Gym 2018
+* source:	https://sketchfab.com/3d-models/avenue-tennis-main-gym-2018-7ae0c1028c404669826cde0656829287
+* author:	y2dan (https://sketchfab.com/y2dan)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Avenue Tennis - Main Gym 2018" (https://sketchfab.com/3d-models/avenue-tennis-main-gym-2018-7ae0c1028c404669826cde0656829287) by y2dan (https://sketchfab.com/y2dan) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
