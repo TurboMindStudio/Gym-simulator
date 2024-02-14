@@ -13,6 +13,7 @@ public class playerController : MonoBehaviour
     float smooth_Time = 0.1f;
     private Vector3 direction;
     public bool canMove;
+   public virtualJoystick joystick;
     private void Awake()
     {
 
@@ -31,9 +32,9 @@ public class playerController : MonoBehaviour
     {
         if(canMove)
         {
-           
-            float horizontal = Input.GetAxis("Horizontal");
-            float Vertical = Input.GetAxis("Vertical");
+
+            float horizontal = joystick.inputHorizontal();
+            float Vertical = joystick.InputVertical();
 
             direction = new Vector3(horizontal, 0, Vertical);
         }
