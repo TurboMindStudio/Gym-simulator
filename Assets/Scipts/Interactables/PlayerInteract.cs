@@ -11,6 +11,7 @@ public class PlayerInteract : MonoBehaviour
     private PlayerUi playerUi;
     private RaycastHit hit;
     public GameObject InteractableButton;
+    
     private void Start()
     {
         playerUi = GetComponent<PlayerUi>();
@@ -42,6 +43,7 @@ public class PlayerInteract : MonoBehaviour
         else
         {
             InteractableButton.SetActive(false);
+
         }
 
     }

@@ -15,7 +15,7 @@ namespace FirstPersonMobileTools.DynamicFirstPerson
         [SerializeField] private KeyCode CrouchInput;
         [SerializeField] private bool LockCursor;
         [SerializeField] private Vector2 _Sensitivity = new Vector2(50f, 50f);
-
+        
         private MovementController movementController;
         private CameraLook cameraLook;
         private Camera _camera;
