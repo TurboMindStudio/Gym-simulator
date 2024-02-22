@@ -1,0 +1,44 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 24.11.2016 15:41:44
+
+newmtl CABLES001
+	Ns 75.000000
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 0.250980 0.129412 0.000000
+	Kd 0.250980 0.129412 0.000000
+	Ks 0.770000 0.770000 0.770000
+	Ke 0.250980 0.129412 0.000000
+
+newmtl MAINFRAME001
+	Ns 9.999999
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 0.588235 0.588235 0.588235
+	Kd 0.588235 0.588235 0.588235
+	Ks 0.000000 0.000000 0.000000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka J:\U Lenovo\ngb1fgdta5-biggym\Pz1\exp1\MAINFRAME001_diffuse.jpg
+	map_Kd J:\U Lenovo\ngb1fgdta5-biggym\Pz1\exp1\MAINFRAME001_diffuse.jpg
+	map_bump Map__3_Normal_Bump.tga
+
+newmtl Weights002
+	Ns 9.999999
+	Ni 1.500000
+	d 1.000000
+	Tr 0.000000
+	Tf 1.000000 1.000000 1.000000 
+	illum 2
+	Ka 0.588235 0.588235 0.588235
+	Kd 0.588235 0.588235 0.588235
+	Ks 0.000000 0.000000 0.000000
+	Ke 0.000000 0.000000 0.000000
+	map_Ka J:\U Lenovo\ngb1fgdta5-biggym\Pz1\exp1\Weights002_diffuse.jpg
+	map_Kd J:\U Lenovo\ngb1fgdta5-biggym\Pz1\exp1\Weights002_diffuse.jpg
+	map_bump Map__7_Normal_Bump.tga
