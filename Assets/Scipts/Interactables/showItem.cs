@@ -9,7 +9,7 @@ public class showItem : MonoBehaviour
     public LayerMask layerMask;
     private Ray ray;
     private RaycastHit hit;
-    public Outline[] outline;
+   // public Outline[] outline;
     private void Update()
     {
         ray=new Ray(cam.transform.position,cam.transform.forward);
@@ -22,12 +22,6 @@ public class showItem : MonoBehaviour
                 hit.collider.GetComponent<Outline>().enabled = true;
             }
         }
-        else
-        {
-            for(int i = 0; i < outline.Length; i++)
-            {
-                outline[i].enabled = false;
-            }
-        }
+       
     }
 }

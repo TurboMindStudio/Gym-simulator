@@ -1,0 +1,97 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class PickUp : MonoBehaviour
+{
+    
+    
+    public GameObject pickUpItem;
+    public GameObject ItemPickPosition;
+    public GameObject equipmentSlot;
+    public PlayerInteract playerInteract;
+    public bool isHolding;
+    public bool isThrow;
+    public Button throwButton;
+    private void Start()
+    {
+        throwButton.onClick.AddListener(throwItem);
+    }
+
+    private void Update()
+    {
+        if(isHolding==true)
+        {
+            
+            PIckupManager.Instance.slotFull = true;
+            pickUpItem.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            pickUpItem.GetComponent<Rigidbody>().useGravity = false;
+            pickUpItem.GetComponent<Outline>().enabled = true;
+            pickUpItem.transform.SetParent(ItemPickPosition.transform);
+            this.gameObject.GetComponent<Collider>().enabled = false;
+            
+        }
+
+        if(isThrow == true)
+        {
+            isThrow = false;
+
+            if (isHolding == true)
+            {
+                PIckupManager.Instance.slotFull = false;
+                isHolding = false;
+                pickUpItem.GetComponent<Rigidbody>().useGravity = true;
+                this.gameObject.GetComponent<Collider>().enabled = true;
+                pickUpItem.GetComponent<Outline>().enabled = false;
+                pickUpItem.transform.SetParent(equipmentSlot.transform);
+            }
+            
+            
+        }
+       
+    }
+    public void pickItem()
+    {
+        if (PIckupManager.Instance.slotFull == false)
+            isHolding = true;
+           PIckupManager.Instance.throwButton.SetActive(true);
+           playerInteract.InteractableButton.SetActive(false);
+    }
+
+    public void throwItem()
+    {
+        isThrow = true;
+        PIckupManager.Instance.throwButton.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            pickUpItem.GetComponent<Outline>().OutlineColor = Color.red;
+            PIckupManager.Instance.throwButton.SetActive(false);
+        }
+        if (other.CompareTag("equipment"))
+        {
+            pickUpItem.GetComponent<Outline>().OutlineColor = Color.red;
+            PIckupManager.Instance.throwButton.SetActive(false);
+        }
+       
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            pickUpItem.GetComponent<Outline>().OutlineColor = Color.yellow;
+            PIckupManager.Instance.throwButton.SetActive(true);
+        }
+        if (other.CompareTag("equipment"))
+        {
+            pickUpItem.GetComponent<Outline>().OutlineColor = Color.yellow;
+            PIckupManager.Instance.throwButton.SetActive(true);
+        }
+    }
+
+
+}
