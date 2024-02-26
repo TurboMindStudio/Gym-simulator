@@ -6,6 +6,9 @@ TagManager:
   tags:
   - equipment
   - Obstacle
+  - NPC
+  - Door
+  - MemberShipTrigger
   layers:
   - Default
   - TransparentFX

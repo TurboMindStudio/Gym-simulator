@@ -14,6 +14,7 @@ public class PickUp : MonoBehaviour
     public bool isHolding;
     public bool isThrow;
     public Button throwButton;
+    public Vector3 machineRot;
     private void Start()
     {
         throwButton.onClick.AddListener(throwItem);
@@ -30,7 +31,8 @@ public class PickUp : MonoBehaviour
             pickUpItem.GetComponent<Outline>().enabled = true;
             pickUpItem.transform.SetParent(ItemPickPosition.transform);
             this.gameObject.GetComponent<Collider>().enabled = false;
-            
+            pickUpItem.transform.localRotation = Quaternion.Euler(machineRot);
+
         }
 
         if(isThrow == true)
@@ -45,6 +47,7 @@ public class PickUp : MonoBehaviour
                 this.gameObject.GetComponent<Collider>().enabled = true;
                 pickUpItem.GetComponent<Outline>().enabled = false;
                 pickUpItem.transform.SetParent(equipmentSlot.transform);
+                
             }
             
             

@@ -10,7 +10,9 @@ public class NPCBeahaviour : MonoBehaviour
     public Transform[] wayPoints;
     [SerializeField] int curruntPos;
 
+
     private Animator animator;
+    public Animator DoorAnimator;
 
     private void Start()
     {
@@ -27,9 +29,12 @@ public class NPCBeahaviour : MonoBehaviour
         {
             if (curruntPos==3)
             {
-                Debug.Log("reached destination");
+                //Debug.Log("reached destination");
                 m_Agent.speed = 0f;
                 animator.SetFloat("Locomotion", 0);
+
+               
+               
             }
             else
             {
@@ -40,6 +45,29 @@ public class NPCBeahaviour : MonoBehaviour
         else
         {
             m_Agent.destination = wayPoints[curruntPos].position;
+        }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Door"))
+        {
+            Debug.Log("Open Door");
+            DoorAnimator.SetBool("DoorOpen", true);
+        }
+        if (other.CompareTag("MemberShipTrigger"))
+        {
+            UserManager.instance.UserButton.onClick.AddListener(UserManager.instance.UpdateMemberData);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Door"))
+        {
+            Debug.Log("Close Door");
+            DoorAnimator.SetBool("DoorOpen", false);
         }
     }
 
