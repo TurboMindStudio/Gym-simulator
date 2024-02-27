@@ -15,3 +15,5 @@ MonoBehaviour:
   EquipmentName: Gym multiple
   EquipmentPrice: 150000
   EquipmentImg: {fileID: 21300000, guid: 274652c47c1503741a4cdee241c2a157, type: 3}
+  EquipmentCount: 0
+  isInstantiated: 0

@@ -15,3 +15,5 @@ MonoBehaviour:
   EquipmentName: BenchPress
   EquipmentPrice: 20000
   EquipmentImg: {fileID: 21300000, guid: 837fb3d8deae73d4db85a0ec555abbe3, type: 3}
+  EquipmentCount: 0
+  isInstantiated: 0

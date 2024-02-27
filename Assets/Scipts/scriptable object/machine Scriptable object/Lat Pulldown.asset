@@ -15,3 +15,5 @@ MonoBehaviour:
   EquipmentName: Lat pulldown
   EquipmentPrice: 80000
   EquipmentImg: {fileID: 21300000, guid: cffde9789717f524cbece4021b618f8f, type: 3}
+  EquipmentCount: 0
+  isInstantiated: 0

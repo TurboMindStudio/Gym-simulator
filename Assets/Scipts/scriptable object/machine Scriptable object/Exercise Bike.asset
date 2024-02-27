@@ -15,3 +15,5 @@ MonoBehaviour:
   EquipmentName: Exercise Bike
   EquipmentPrice: 32000
   EquipmentImg: {fileID: 21300000, guid: 53306177bf92aa04ea92a22a731a482f, type: 3}
+  EquipmentCount: 0
+  isInstantiated: 0

@@ -11,4 +11,5 @@ public class gymEquipment : ScriptableObject
     public int EquipmentPrice;
     public Sprite EquipmentImg;
     public int EquipmentCount;
+    public bool isInstantiated;
 }

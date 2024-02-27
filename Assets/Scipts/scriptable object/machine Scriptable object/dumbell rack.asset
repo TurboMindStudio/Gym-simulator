@@ -15,3 +15,5 @@ MonoBehaviour:
   EquipmentName: Dumbell rack
   EquipmentPrice: 17000
   EquipmentImg: {fileID: 21300000, guid: 6b6223bde9f2c1e49a09634d4aa4500e, type: 3}
+  EquipmentCount: 0
+  isInstantiated: 0

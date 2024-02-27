@@ -15,3 +15,5 @@ MonoBehaviour:
   EquipmentName: Dumbell
   EquipmentPrice: 500
   EquipmentImg: {fileID: 21300000, guid: 3542789252ec6784e8f1fcccc776ae08, type: 3}
+  EquipmentCount: 0
+  isInstantiated: 0

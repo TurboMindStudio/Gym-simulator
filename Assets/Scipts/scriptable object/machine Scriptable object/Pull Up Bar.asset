@@ -15,3 +15,5 @@ MonoBehaviour:
   EquipmentName: Pull Up Bar
   EquipmentPrice: 5000
   EquipmentImg: {fileID: 21300000, guid: d40aabd0578aede45a06d4ab493b5ddc, type: 3}
+  EquipmentCount: 0
+  isInstantiated: 0

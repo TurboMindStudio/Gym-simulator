@@ -15,3 +15,5 @@ MonoBehaviour:
   EquipmentName: Treadmill
   EquipmentPrice: 30000
   EquipmentImg: {fileID: 21300000, guid: c854efa03ff7e2a44939d8ba026eed91, type: 3}
+  EquipmentCount: 0
+  isInstantiated: 0
