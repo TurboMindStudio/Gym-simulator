@@ -30,6 +30,7 @@ public class PickUp : MonoBehaviour
             pickUpItem.GetComponent<Rigidbody>().useGravity = false;
             pickUpItem.GetComponent<Outline>().enabled = true;
             pickUpItem.transform.SetParent(ItemPickPosition.transform);
+            pickUpItem.transform.localPosition = Vector3.zero;
             this.gameObject.GetComponent<Collider>().enabled = false;
             pickUpItem.transform.localRotation = Quaternion.Euler(machineRot);
 

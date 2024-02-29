@@ -16,6 +16,7 @@ public class InventoryManager : MonoBehaviour
     public int count=0;
 
     public gymEquipment[] equipmentGym;
+    public Transform pickPos;
   
 
     private void Start()
@@ -34,12 +35,17 @@ public class InventoryManager : MonoBehaviour
                 UiManager.instance.InventoryWarning.gameObject.SetActive(true);
             }
         }
+
+        
     }
 
     public void InstantiateItem(gymEquipment itemBuyInfo)
     {
         GameObject temp = Instantiate(InventoryItemPrefab, InventoryContentPanel.transform) as GameObject;
         ItemBuy.Add(temp);
+
+        Button ItemSpwanButton = ItemBuy[count].GetComponentInChildren<Button>();
+        ItemSpwanButton.onClick.AddListener(() => SpwanItem(itemBuyInfo.GymMachinePrefab));
 
         TextMeshProUGUI[] ItemText = ItemBuy[count].GetComponentsInChildren<TextMeshProUGUI>();
         ItemText[1].text = itemBuyInfo.EquipmentName;
@@ -61,17 +67,23 @@ public class InventoryManager : MonoBehaviour
             CashManager.instance.walletBalanceText.text= "Rs : " + CashManager.instance.WalletBalance.ToString();
             AudioManager.Instance.audioSource.PlayOneShot(AudioManager.Instance.cashDeductsfx);
 
+            
 
             if (itemBuyInfo.isInstantiated == false)
             {
                 GameObject temp = Instantiate(InventoryItemPrefab, InventoryContentPanel.transform) as GameObject;
                 ItemBuy.Add(temp);
 
+                Button ItemSpwanButton = ItemBuy[count].GetComponentInChildren<Button>();
+                ItemSpwanButton.onClick.AddListener(() => SpwanItem(itemBuyInfo.GymMachinePrefab));
+
                 TextMeshProUGUI[] ItemText = ItemBuy[count].GetComponentsInChildren<TextMeshProUGUI>();
                 ItemText[1].text = itemBuyInfo.EquipmentName;
 
                 Image[] ItemImg = ItemBuy[count].GetComponentsInChildren<Image>();
                 ItemImg[1].sprite = itemBuyInfo.EquipmentImg;
+
+                
 
                 itemBuyInfo.isInstantiated = true;
                 count++;
@@ -107,4 +119,11 @@ public class InventoryManager : MonoBehaviour
         }
 
     }
+
+    public void SpwanItem(GameObject ItemPrefab)
+    {
+        Instantiate(ItemPrefab, pickPos);
+    }
+
+  
 }

@@ -58,7 +58,14 @@ public class NPCBeahaviour : MonoBehaviour
         }
         if (other.CompareTag("MemberShipTrigger"))
         {
+            
             UserManager.instance.UserButton.onClick.AddListener(UserManager.instance.UpdateMemberData);
+            UserManager.instance.RandomMemberName = Random.Range(0, UserManager.instance.GymMembers.Length);
+            UserManager.instance.MemberNameText.text = UserManager.instance.GymMembers[UserManager.instance.RandomMemberName].Name.ToString();
+            Debug.Log(UserManager.instance.GymMembers[UserManager.instance.RandomMemberName].Name);
+
+            UserManager.instance.warningTxt.SetActive(false);
+            UserManager.instance.gymMemberPanel.SetActive(false);
         }
     }
 

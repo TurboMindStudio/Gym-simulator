@@ -8,10 +8,11 @@ public class UserManager : MonoBehaviour
 {
     public static UserManager instance;
     public NpcScriptable[] GymMembers;
-    private int RandomMemberName;
+    public int RandomMemberName;
 
     public TextMeshProUGUI MemberNameText;
     public GameObject memberShipPanel;
+    public GameObject gymMemberPanel;
 
     public GameObject warningTxt;
     public Button UserButton;
@@ -22,14 +23,10 @@ public class UserManager : MonoBehaviour
         instance = this;
         memberShipPanel.SetActive(false);
     }
-    
 
     public void UpdateMemberData()
     {
         memberShipPanel.SetActive(true);
-        warningTxt.SetActive(false);
-        RandomMemberName = Random.Range(0, GymMembers.Length);
-        MemberNameText.text = GymMembers[RandomMemberName].Name.ToString();
-        Debug.Log(GymMembers[RandomMemberName].Name);
+        Debug.Log("active member");
     }
 }

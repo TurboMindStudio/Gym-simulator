@@ -9,6 +9,10 @@ public class UiManager : MonoBehaviour
     public GameObject computerPanel;
     public TextMeshProUGUI infoText;
     public GameObject InventoryWarning;
+
+    //name plate
+    public TMP_InputField nameInputFeild;
+    public TextMeshProUGUI BoardName;
     private void Awake()
     {
         instance = this;
@@ -18,5 +22,11 @@ public class UiManager : MonoBehaviour
     {
         infoText.gameObject.SetActive(true);
         infoText.text = text;
+    }
+
+    public void ChangeNamePlate()
+    {
+       BoardName.text = nameInputFeild.text;
+       
     }
 }

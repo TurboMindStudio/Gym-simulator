@@ -12,4 +12,5 @@ public class gymEquipment : ScriptableObject
     public Sprite EquipmentImg;
     public int EquipmentCount;
     public bool isInstantiated;
+    public GameObject GymMachinePrefab;
 }

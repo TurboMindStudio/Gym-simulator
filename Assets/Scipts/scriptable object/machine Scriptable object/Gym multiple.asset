@@ -17,3 +17,4 @@ MonoBehaviour:
   EquipmentImg: {fileID: 21300000, guid: 274652c47c1503741a4cdee241c2a157, type: 3}
   EquipmentCount: 0
   isInstantiated: 0
+  GymMachinePrefab: {fileID: 1331675114294083515, guid: 576b242d58b077f45b14c92dcbffb318, type: 3}
