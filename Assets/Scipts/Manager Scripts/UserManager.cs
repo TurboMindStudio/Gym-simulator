@@ -16,7 +16,9 @@ public class UserManager : MonoBehaviour
 
     public GameObject warningTxt;
     public Button UserButton;
-    
+
+    public bool MemberJoined;
+
 
     public void Awake()
     {
@@ -28,5 +30,18 @@ public class UserManager : MonoBehaviour
     {
         memberShipPanel.SetActive(true);
         Debug.Log("active member");
+    }
+
+    public void JoinMember(int moneyAdded)
+    {
+        CashManager.instance.WalletBalance += moneyAdded;
+        CashManager.instance.walletBalanceText.text = "Rs : " + CashManager.instance.WalletBalance.ToString();
+        memberShipPanel.SetActive(false);
+        gymMemberPanel.SetActive(false);
+        AudioManager.Instance.audioSource.PlayOneShot(AudioManager.Instance.cashDeductsfx);
+        MemberJoined = true;
+
+
+
     }
 }

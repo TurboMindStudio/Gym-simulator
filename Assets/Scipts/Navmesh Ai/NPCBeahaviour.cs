@@ -14,11 +14,15 @@ public class NPCBeahaviour : MonoBehaviour
     private Animator animator;
     public Animator DoorAnimator;
 
+    public bool doWorkout;
+    public Transform workoutPosition;
+
     private void Start()
     {
         m_Agent = GetComponent<NavMeshAgent>();
         animator=GetComponent<Animator>();
         Transform wp = wayPoints[curruntPos];
+        doWorkout = true;
     }
 
     private void Update()
@@ -46,6 +50,13 @@ public class NPCBeahaviour : MonoBehaviour
         {
             m_Agent.destination = wayPoints[curruntPos].position;
         }
+
+        if (UserManager.instance.MemberJoined == true && doWorkout == true)
+        {
+            m_Agent.speed = 2.5f;
+            animator.SetFloat("Locomotion", 1);
+            m_Agent.destination=GameObject.FindGameObjectWithTag("equipment").GetComponent<Transform>().position;
+        }
     }
 
 
@@ -67,6 +78,17 @@ public class NPCBeahaviour : MonoBehaviour
             UserManager.instance.warningTxt.SetActive(false);
             UserManager.instance.gymMemberPanel.SetActive(false);
         }
+
+        if (other.CompareTag("Workout"))
+        {
+            doWorkout = false;
+            Debug.Log("start Exercise");
+            m_Agent.speed = 0;
+            animator.SetTrigger("jogg");
+            animator.SetFloat("Locomotion", 0);
+            this.transform.position = workoutPosition.position;
+            transform.rotation = Quaternion.identity;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -76,10 +98,8 @@ public class NPCBeahaviour : MonoBehaviour
             Debug.Log("Close Door");
             DoorAnimator.SetBool("DoorOpen", false);
         }
+
+        
     }
-
-
-
-
 
 }

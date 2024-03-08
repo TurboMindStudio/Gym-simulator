@@ -9,6 +9,7 @@ TagManager:
   - NPC
   - Door
   - MemberShipTrigger
+  - Workout
   layers:
   - Default
   - TransparentFX
